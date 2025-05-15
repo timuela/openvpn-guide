@@ -49,7 +49,7 @@ Make it readable only by root:
 sudo chmod 600 /etc/openvpn/psw-file
 ```
 
-Open /etc/openvpn/server.conf file and uncommon these 2 line:
+Open /etc/openvpn/server.conf file and common these 2 line:
 ```bash
 user nobody  
 group nogroup  
