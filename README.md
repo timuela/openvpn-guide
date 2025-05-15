@@ -51,7 +51,7 @@ sudo chmod 600 /etc/openvpn/psw-file
 
 Since the psw-file is only readable by root, OpenVPN should also run as root.
 
-Open /etc/openvpn/server.conf, delete/common these 2 lines:
+Open /etc/openvpn/server.conf, delete or common these 2 lines:
 ```bash
 #user nobody  
 #group nogroup  
