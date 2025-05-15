@@ -1,5 +1,5 @@
 # How to install OpenVPN for selfhosted and Enable Username/Password, 2FA Authentication
-## Step 1: Install OpenVPN using angristan's script
+## Step 1: Install OpenVPN (if you haven't)
 First, get the script and make it executable:
 
 ```bash
