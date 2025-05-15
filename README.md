@@ -318,7 +318,7 @@ user1:JBSWY3DPEHPK3PXP
 
 For the user to set up their authenticator app, you'll need to either:
 
-    Show them the QR code (run google-authenticator interactively)
+    Show them the QR code
 
     Give them the secret key to enter manually
 
