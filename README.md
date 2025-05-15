@@ -24,6 +24,7 @@ In your home directory, you will have `.ovpn` files. These are the client config
 
 ## Step 2: Enable Username and Password
 1. Create the User Credentials File
+
 Let’s say you want to store credentials in /etc/openvpn/psw-file.
 
 Each line should contain:
