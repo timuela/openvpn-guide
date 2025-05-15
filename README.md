@@ -245,7 +245,7 @@ Restart service:
 ```bash
 sudo systemctl restart openvpn@server
 ```
-4. .ovpn file
+4. Make changes to the .ovpn file
 
 If you already created an .ovpn file, add this line to the file:
 ```bash
