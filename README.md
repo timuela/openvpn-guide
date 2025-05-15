@@ -234,7 +234,7 @@ Add:
 # Enable username/password authentication
 auth-user-pass-verify /etc/openvpn/auth.sh via-file
 
-# Enforce client authentication
+# Consistent Client Identification
 username-as-common-name
 
 # Allow script execution
