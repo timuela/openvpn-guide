@@ -237,7 +237,7 @@ auth-user-pass-verify /etc/openvpn/auth.sh via-file
 # Enforce client authentication
 username-as-common-name
 
-# Optional: push DNS and routes
+# Allow script execution
 script-security 3
 
 # Plugin for PAM authentication
