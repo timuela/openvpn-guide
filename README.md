@@ -1,5 +1,5 @@
 # How to install OpenVPN for selfhosted and Enable Username/Password, 2FA Authentication
-## Install OpenVPN using angristan's script
+## Step 1: Install OpenVPN using angristan's script
 First, get the script and make it executable:
 
 ```bash
@@ -22,7 +22,7 @@ When OpenVPN is installed, you can run the script again, and you will get the ch
 
 In your home directory, you will have `.ovpn` files. These are the client configuration files. Download them from your server and connect using your favorite OpenVPN client.
 
-## Enable Username and Password
+## Step 2: Enable Username and Password
 1. Create the User Credentials File
 Let’s say you want to store credentials in /etc/openvpn/psw-file.
 
@@ -259,7 +259,7 @@ Or you can run the script again, and you will get the choice to:
 
 Then add 'auth-user-pass' to the .ovpn file
 
-## Add Google Authenticator via libpam-google-authenticator
+## Step 3: Add Google Authenticator via libpam-google-authenticator
 
 We’ll use PAM's validation engine (pam_google_authenticator.so) inside a custom script, per-user, tied to your existing psw-file users.
 
