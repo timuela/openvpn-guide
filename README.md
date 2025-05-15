@@ -49,7 +49,9 @@ Make it readable only by root:
 sudo chmod 600 /etc/openvpn/psw-file
 ```
 
-Open /etc/openvpn/server.conf file and common these 2 line:
+Since the psw-file is only readable by root, you should delete/common these 2 lines:
+
+Open /etc/openvpn/server.conf
 ```bash
 #user nobody  
 #group nogroup  
