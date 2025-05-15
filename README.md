@@ -223,6 +223,7 @@ sudo chmod +x /etc/openvpn/auth.sh
 ```
 
 3. Modify the OpenVPN Server Configuration
+
 Edit your OpenVPN server config /etc/openvpn/server.conf
 
 Add:
@@ -245,25 +246,29 @@ Restart service:
 sudo systemctl restart openvpn@server
 ```
 4. .ovpn file
+
 If you already created an .ovpn file, add this line to the file:
 ```bash
 auth-user-pass
 ```
 This enable username and password login
+
 Or you can run the script again, and you will get the choice to:
 
 - Add a client
+
 Then add 'auth-user-pass' to the .ovpn file
 
 ## Add Google Authenticator via libpam-google-authenticator
+
 We’ll use PAM's validation engine (pam_google_authenticator.so) inside a custom script, per-user, tied to your existing psw-file users.
 
 1. Install Google Authenticator PAM Module
-
 ```bash
 sudo apt-get update
 sudo apt-get install oathtool libpam-google-authenticator -y
 ```
+
 2. Create the TOTP secret files:
 ```bash
 sudo touch /etc/openvpn/totp-secrets
@@ -274,35 +279,51 @@ sudo chmod 600 /etc/openvpn/totp-secrets
 # Format: username:secretkey
 user1:JBSWY3DPEHPK3PXP"
 ```
+
 To generate secretkey:
 ```bash
 google-authenticator
 ```
+
 When it asks you to update your "/home/$USER/.google_authenticator" file, Pick no.
+
 ### The Problem:
+
 The google-authenticator command generated a file with:
 
     The secret key (JBSWY3DPEHPK3PXP)
+
     Configuration directives (RATE_LIMIT, WINDOW_SIZE, etc.)
+
     Some TOTP codes (the numbers at the bottom)
+
     Our auth.sh script expects a simple username:secret format in the totp-secrets file.
+
 So you just discard everything else, only keep the secret key:
 ```bash
 sudo nano /etc/openvpn/totp-secrets
 ```
+
 For each user, add a line with:
 ```bash
 username:secretkey
 ```
+
 Example:
 ```bash
 user1:JBSWY3DPEHPK3PXP
 ```
+
 ## Important Notes:
+
 For the user to set up their authenticator app, you'll need to either:
+
     Show them the QR code (run google-authenticator interactively)
+
     Give them the secret key to enter manually
+
 After setting this up, users will need to enter: password+TOTPcode as their password in OpenVPN 
+
 (e.g., if password is "mypass" and Google code is "123456", they'd enter "mypass123456").
 
 Every step is logged to /var/log/openvpn-auth.log
@@ -311,4 +332,5 @@ This part of the auth.sh script keep 2 past codes valid for slow typers:
 ```bash
     mapfile -t valid_codes < <(oathtool --totp -b "$totp_secret" -w $TOTP_WINDOW --now "$(date -u -d '-60 seconds' +'%Y-%m-%d %H:%M:%S UTC')" 2>/dev/null)
 ```
+
 You can adjust '-60 seconds' as you like, each code takes 30 seconds
