@@ -334,3 +334,5 @@ This part of the auth.sh script keep 2 past codes valid for slow typers:
 ```
 
 You can adjust '-60 seconds' as you like, each code takes 30 seconds
+
+log.png
