@@ -55,7 +55,9 @@ group nogroup
 ```
 
 2. Create an Authentication Script
+
 OpenVPN will use a script to check the username/password against the list.
+
 Create the script:
 
 ```bash
