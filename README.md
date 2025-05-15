@@ -324,7 +324,7 @@ For the user to set up their authenticator app, you'll need to either:
 
 After setting this up, users will need to enter: password+TOTPcode as their password in OpenVPN 
 
-(e.g., if password is "mypass" and Google code is "123456", they'd enter "mypass123456").
+    (e.g., if password is "mypass" and Google code is "123456", they'd enter "mypass123456").
 
 Every step is logged to /var/log/openvpn-auth.log
 ![log](log.png)
