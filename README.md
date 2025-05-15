@@ -334,5 +334,5 @@ This part of the auth.sh script keep 2 past codes valid for slow typers:
     mapfile -t valid_codes < <(oathtool --totp -b "$totp_secret" -w $TOTP_WINDOW --now "$(date -u -d '-60 seconds' +'%Y-%m-%d %H:%M:%S UTC')" 2>/dev/null)
 ```
 
-You can adjust '-60 seconds' as you like, each code takes 30 seconds
+You can adjust '-60 seconds' as you'd like, each code takes 30 seconds
 
