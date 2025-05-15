@@ -51,8 +51,8 @@ sudo chmod 600 /etc/openvpn/psw-file
 
 Open /etc/openvpn/server.conf file and common these 2 line:
 ```bash
-user nobody  
-group nogroup  
+#user nobody  
+#group nogroup  
 ```
 
 2. Create an Authentication Script
