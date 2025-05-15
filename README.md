@@ -327,6 +327,7 @@ After setting this up, users will need to enter: password+TOTPcode as their pass
 (e.g., if password is "mypass" and Google code is "123456", they'd enter "mypass123456").
 
 Every step is logged to /var/log/openvpn-auth.log
+![log](log.png)
 
 This part of the auth.sh script keep 2 past codes valid for slow typers:
 ```bash
@@ -335,4 +336,3 @@ This part of the auth.sh script keep 2 past codes valid for slow typers:
 
 You can adjust '-60 seconds' as you like, each code takes 30 seconds
 
-![log](log.png)
