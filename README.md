@@ -297,9 +297,9 @@ The google-authenticator command generated a file with:
 
     Some TOTP codes (the numbers at the bottom)
 
-    Our auth.sh script expects a simple username:secret format in the totp-secrets file.
+Our auth.sh script expects a simple username:secret format in the totp-secrets file.
 
-So you just discard everything else, only keep the secret key:
+That's why you should discard everything else, only keep the secret key:
 ```bash
 sudo nano /etc/openvpn/totp-secrets
 ```
