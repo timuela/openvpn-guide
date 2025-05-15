@@ -289,7 +289,7 @@ When it asks you to update your "/home/$USER/.google_authenticator" file, Pick n
 
 ### The Problem:
 
-The google-authenticator command generated a file with:
+The google-authenticator command generates a file with:
 
     The secret key (JBSWY3DPEHPK3PXP)
 
